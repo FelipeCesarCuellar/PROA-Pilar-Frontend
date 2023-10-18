@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
-import HomeTemplate from 'template/Home';
+import LoginTemplate from 'template/Login';
 
 const Home: NextPage = () => {
-    return <HomeTemplate />;
+    return <LoginTemplate />;
 };
 
 export default Home;
