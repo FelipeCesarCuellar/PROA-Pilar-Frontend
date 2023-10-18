@@ -104,6 +104,7 @@ export const RequestButton = styled(Button)`
     letter-spacing: 1.25px;
     font-weight: bold;
     width: 80%;
+    margin-bottom: 32px;
 `;
 
 export const LoginPicture = styled.img`
