@@ -1,6 +1,7 @@
 import ProaLogo from 'components/ProaLogo';
 import { TextField, Checkbox } from '@mui/material';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import * as S from './styles';
 import * as G from '../../styles/global';
 
@@ -8,6 +9,7 @@ const LoginTemplate = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [remember, setRemember] = useState(false);
+    const router = useRouter();
     return (
         <S.Container>
             <S.LeftWrapper>
@@ -55,6 +57,7 @@ const LoginTemplate = () => {
                                     setPassword('Teste123');
                                 }
                             }
+                            router.push('/profile');
                         }}
                     >
                         Login
