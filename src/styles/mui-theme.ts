@@ -5,6 +5,9 @@ const MuiTheme = createTheme({
     palette: {
         primary: {
             main: theme.colors.institucional.blue
+        },
+        secondary: {
+            main: theme.colors.onSurface.mediumEmphasis
         }
     },
     typography: {

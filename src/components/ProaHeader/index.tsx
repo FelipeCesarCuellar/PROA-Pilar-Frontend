@@ -6,7 +6,6 @@ import * as G from '../../styles/global';
 
 interface ProaHeaderProps {
     username: string;
-    lightMode: string;
 }
 
 const ProaHeader: React.FC<ProaHeaderProps> = ({ username }) => {
@@ -24,7 +23,7 @@ const ProaHeader: React.FC<ProaHeaderProps> = ({ username }) => {
                     <S.BlueDivider />
                     <S.Option>Cursos</S.Option>
                 </S.Menu>
-                <S.UserProfile onClick={() => router.push('/login')}>
+                <S.UserProfile onClick={() => router.push('/profile')}>
                     <S.ProfilePicture
                         src="./assets/images/temp_profile.png"
                         alt=""

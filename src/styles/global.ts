@@ -59,3 +59,9 @@ export const Button = styled.p`
     text-transform: uppercase;
     color: ${theme.colors.onSurface.mediumEmphasis};
 `;
+
+export const HeadlineBold = styled.p`
+    font-family: PoppinsBold;
+    font-size: 48px;
+    color: ${theme.colors.onSurface.mediumEmphasis};
+`;
