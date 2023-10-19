@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import LoginTemplate from 'template/login';
+import LoginTemplate from 'template/authenticate';
 
 const Login: NextPage = () => {
     return <LoginTemplate />;
