@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
 import CourseTemplate from 'template/course';
 
-const Home: NextPage = () => {
+const Login: NextPage = () => {
     return <CourseTemplate />;
 };
 
-export default Home;
+export default Login;

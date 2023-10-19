@@ -65,3 +65,11 @@ export const HeadlineBold = styled.p`
     font-size: 48px;
     color: ${theme.colors.onSurface.mediumEmphasis};
 `;
+
+export const BodyBold = styled.p`
+    font-family: PoppinsBold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: ${theme.colors.onSurface.mediumEmphasis};
+`;
