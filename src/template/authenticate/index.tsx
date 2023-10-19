@@ -43,7 +43,7 @@ const LoginTemplate = () => {
                         <S.RemeberWrapper>
                             <Checkbox
                                 value={remember}
-                                onChange={() => setRemember(!remember)}
+                                onChange={(e) => setRemember(e.target.checked)}
                             />
                             <S.RemeberText>Lembre-se de mim</S.RemeberText>
                         </S.RemeberWrapper>

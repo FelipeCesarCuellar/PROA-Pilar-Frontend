@@ -8,7 +8,11 @@ const MuiTheme = createTheme({
         }
     },
     typography: {
-        fontFamily: ['PoppinsNormal', 'PoppinsLight', 'PoppinsBold'].join(',')
+        fontFamily: ['PoppinsNormal', 'PoppinsLight', 'PoppinsBold'].join(','),
+        button: {
+            fontFamily: ['PoppinsBold', 'PoppinsNormal'].join(','),
+            fontSize: 20
+        }
     }
 });
 

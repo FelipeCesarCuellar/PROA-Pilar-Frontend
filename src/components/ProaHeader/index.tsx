@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProaLogo from 'components/ProaLogo';
-import MUISwitch from 'components/MUISwitch';
 import { useRouter } from 'next/router';
 import * as S from './styles';
 import * as G from '../../styles/global';
@@ -10,8 +9,7 @@ interface ProaHeaderProps {
     lightMode: string;
 }
 
-const ProaHeader: React.FC<ProaHeaderProps> = ({ username, lightMode }) => {
-    const [mode, setMode] = useState(lightMode);
+const ProaHeader: React.FC<ProaHeaderProps> = ({ username }) => {
     const router = useRouter();
     return (
         <S.Container>
@@ -26,12 +24,6 @@ const ProaHeader: React.FC<ProaHeaderProps> = ({ username, lightMode }) => {
                     <S.BlueDivider />
                     <S.Option>Cursos</S.Option>
                 </S.Menu>
-                <MUISwitch
-                    mode={mode}
-                    onChange={(e) =>
-                        e.target.checked ? setMode('dark') : setMode('light')
-                    }
-                />
                 <S.UserProfile onClick={() => router.push('/login')}>
                     <S.ProfilePicture
                         src="./assets/images/temp_profile.png"
