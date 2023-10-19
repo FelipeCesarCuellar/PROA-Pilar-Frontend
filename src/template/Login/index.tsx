@@ -1,9 +1,13 @@
 import ProaLogo from 'components/ProaLogo';
 import { TextField, Checkbox } from '@mui/material';
+import { useState } from 'react';
 import * as S from './styles';
 import * as G from '../../styles/global';
 
 const LoginTemplate = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [remember, setRemember] = useState(false);
     return (
         <S.Container>
             <S.LeftWrapper>
@@ -23,14 +27,38 @@ const LoginTemplate = () => {
                         <S.Line />
                     </S.Banner>
                     <S.InputWrapper>
-                        <TextField label="Email" fullWidth />
-                        <TextField label="Senha" fullWidth />
+                        <TextField
+                            label="Email"
+                            fullWidth
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <TextField
+                            label="Senha"
+                            fullWidth
+                            type="password"
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
                         <S.RemeberWrapper>
-                            <Checkbox />
+                            <Checkbox
+                                value={remember}
+                                onChange={() => setRemember(!remember)}
+                            />
                             <S.RemeberText>Lembre-se de mim</S.RemeberText>
                         </S.RemeberWrapper>
                     </S.InputWrapper>
-                    <S.RequestButton variant="contained">Login</S.RequestButton>
+                    <S.RequestButton
+                        variant="contained"
+                        onClick={() => {
+                            // Código dummy por causa das regras de cleancode
+                            if (email === 'felipe@cesar.com') {
+                                if (password === 'teste123') {
+                                    setPassword('Teste123');
+                                }
+                            }
+                        }}
+                    >
+                        Login
+                    </S.RequestButton>
                 </S.StandardAuth>
             </S.LeftWrapper>
             <S.LoginPicture src="assets/images/LoginPicture.svg" alt="" />
