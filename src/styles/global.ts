@@ -34,6 +34,14 @@ export const SubtitleNormal = styled.p`
     color: ${theme.colors.onSurface.mediumEmphasis};
 `;
 
+export const Body1 = styled.p`
+    font-family: PoppinsNormal;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: ${theme.colors.onSurface.mediumEmphasis};
+`;
+
 export const Body2 = styled.p`
     font-family: PoppinsLight;
     font-size: 20px;
