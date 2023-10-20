@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProaHeader from 'components/ProaHeader';
 import { useRouter } from 'next/router';
 import {
@@ -18,12 +18,19 @@ const CourseTemplate = () => {
         name: 'Websites com HTML, CSS e JS do início',
         banner: '/assets/images/CourseBG.png',
         teachers: 'Bruno Jovenasso, Thiago Maia, Felipe Bergamini',
-        start_date: '01/01/2023',
-        finish_date: '01/06/2023',
+        start_date: '2023-01-01',
+        finish_date: '2023-06-01',
         updated_at: '04/04/2023, 15:26',
         students: 120,
         id: 'PSI3472'
     };
+
+    const [startDate, setStartDate] = useState(course.start_date);
+    const [finishDate, setFinishDate] = useState(course.finish_date);
+    const [students, setStudents] = useState(course.students);
+    const [teachers, setTeachers] = useState(course.teachers);
+    const [editMode, setEditMode] = useState(false);
+
     const router = useRouter();
     return (
         <S.Container>
@@ -34,12 +41,20 @@ const CourseTemplate = () => {
                 <S.Section>
                     <S.Label>Corpo docente:</S.Label>
                     <FormControl sx={{ m: 1, minWidth: 480 }}>
-                        <TextField value={course.teachers} disabled fullWidth />
+                        <TextField
+                            value={teachers}
+                            disabled={!editMode}
+                            fullWidth
+                            onChange={(e) => setTeachers(e.target.value)}
+                        />
                     </FormControl>
                 </S.Section>
                 <S.Section>
                     <S.Label>Região:</S.Label>
-                    <FormControl sx={{ m: 1, minWidth: 120 }} disabled>
+                    <FormControl
+                        sx={{ m: 1, minWidth: 120 }}
+                        disabled={!editMode}
+                    >
                         <Select
                             displayEmpty
                             inputProps={{ 'aria-label': 'Without label' }}
@@ -55,13 +70,26 @@ const CourseTemplate = () => {
             </S.UpperData>
             <S.LowerData>
                 <S.Label>Início:</S.Label>
-                <S.SmallTextField value={course.start_date} disabled />
+                <S.SmallTextField
+                    value={startDate}
+                    disabled={!editMode}
+                    type="date"
+                    onChange={(e) => setStartDate(e.target.value)}
+                />
                 <S.Label>Término:</S.Label>
-                <S.SmallTextField value={course.finish_date} disabled />
+                <S.SmallTextField
+                    value={finishDate}
+                    disabled={!editMode}
+                    type="date"
+                    onChange={(e) => setFinishDate(e.target.value)}
+                />
                 <S.Label>Inscritos:</S.Label>
                 <S.SmallTextField
-                    value={`${course.students} alunos`}
-                    disabled
+                    value={students}
+                    disabled={!editMode}
+                    type="number"
+                    style={{ width: 120 }}
+                    onChange={(e) => setStudents(parseInt(e.target.value, 10))}
                 />
             </S.LowerData>
             <S.Footer>
@@ -72,7 +100,10 @@ const CourseTemplate = () => {
                 <Button
                     variant="outlined"
                     color="secondary"
-                    onClick={() => router.push('/course')}
+                    onClick={() => {
+                        setEditMode(!editMode);
+                        router.push('/course');
+                    }}
                 >
                     Habilitar edição
                 </Button>

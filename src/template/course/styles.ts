@@ -77,6 +77,6 @@ export const Footer = styled.div`
 `;
 
 export const SmallTextField = styled(TextField)`
-    width: 120px;
+    width: 172px;
     margin-right: 32px;
 `;
