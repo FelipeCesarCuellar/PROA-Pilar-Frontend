@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material';
 import styled from 'styled-components';
 import { BodyBold, HeadlineBold, theme } from 'styles/global';
 
@@ -44,7 +45,7 @@ export const Label = styled(BodyBold)`
 
 export const LowerData = styled(UpperData)`
     justify-content: flex-start;
-    align-items: end;
+    align-items: center;
 `;
 
 export const Data = styled.p`
@@ -73,4 +74,9 @@ export const Footer = styled.div`
     padding: 16px 100px 64px 100px;
     position: fixed;
     bottom: 0;
+`;
+
+export const SmallTextField = styled(TextField)`
+    width: 120px;
+    margin-right: 32px;
 `;

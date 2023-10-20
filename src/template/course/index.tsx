@@ -1,7 +1,13 @@
 import React from 'react';
 import ProaHeader from 'components/ProaHeader';
 import { useRouter } from 'next/router';
-import { Button } from '@mui/material';
+import {
+    Button,
+    FormControl,
+    MenuItem,
+    Select,
+    TextField
+} from '@mui/material';
 import * as S from './styles';
 
 const CourseTemplate = () => {
@@ -14,7 +20,7 @@ const CourseTemplate = () => {
         teachers: 'Bruno Jovenasso, Thiago Maia, Felipe Bergamini',
         start_date: '01/01/2023',
         finish_date: '01/06/2023',
-        updated_at: 'sometime',
+        updated_at: '04/04/2023, 15:26',
         students: 120,
         id: 'PSI3472'
     };
@@ -27,19 +33,36 @@ const CourseTemplate = () => {
             <S.UpperData>
                 <S.Section>
                     <S.Label>Corpo docente:</S.Label>
-                    <S.Data>{course.teachers}</S.Data>
+                    <FormControl sx={{ m: 1, minWidth: 480 }}>
+                        <TextField value={course.teachers} disabled fullWidth />
+                    </FormControl>
                 </S.Section>
                 <S.Section>
                     <S.Label>Região:</S.Label>
+                    <FormControl sx={{ m: 1, minWidth: 120 }} disabled>
+                        <Select
+                            displayEmpty
+                            inputProps={{ 'aria-label': 'Without label' }}
+                            value="Brasil"
+                        >
+                            <MenuItem value="Brasil">Brasil</MenuItem>
+                            <MenuItem value="SP">SP</MenuItem>
+                            <MenuItem value="RJ">RJ</MenuItem>
+                            <MenuItem value="SC">SC</MenuItem>
+                        </Select>
+                    </FormControl>
                 </S.Section>
             </S.UpperData>
             <S.LowerData>
                 <S.Label>Início:</S.Label>
-                <S.Data>{course.start_date}</S.Data>
+                <S.SmallTextField value={course.start_date} disabled />
                 <S.Label>Término:</S.Label>
-                <S.Data>{course.finish_date}</S.Data>
+                <S.SmallTextField value={course.finish_date} disabled />
                 <S.Label>Inscritos:</S.Label>
-                <S.Data>{course.students} alunos</S.Data>
+                <S.SmallTextField
+                    value={`${course.students} alunos`}
+                    disabled
+                />
             </S.LowerData>
             <S.Footer>
                 <S.CourseData>
