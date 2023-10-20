@@ -41,6 +41,7 @@ export const Section = styled.div`
 
 export const Label = styled(BodyBold)`
     margin-right: 16px;
+    margin-left: 32px;
 `;
 
 export const LowerData = styled(UpperData)`
@@ -78,5 +79,4 @@ export const Footer = styled.div`
 
 export const SmallTextField = styled(TextField)`
     width: 172px;
-    margin-right: 32px;
 `;

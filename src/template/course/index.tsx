@@ -39,7 +39,7 @@ const CourseTemplate = () => {
             <S.CourseName>{course.name}</S.CourseName>
             <S.UpperData>
                 <S.Section>
-                    <S.Label>Corpo docente:</S.Label>
+                    <S.Label style={{ marginLeft: 0 }}>Corpo docente:</S.Label>
                     <FormControl sx={{ m: 1, minWidth: 480 }}>
                         <TextField
                             value={teachers}
@@ -69,7 +69,7 @@ const CourseTemplate = () => {
                 </S.Section>
             </S.UpperData>
             <S.LowerData>
-                <S.Label>Início:</S.Label>
+                <S.Label style={{ marginLeft: 0 }}>Início:</S.Label>
                 <S.SmallTextField
                     value={startDate}
                     disabled={!editMode}
