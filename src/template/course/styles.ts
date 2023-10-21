@@ -72,11 +72,17 @@ export const Footer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 100px 64px 100px;
+    padding: 32px 100px 32px 100px;
     position: fixed;
     bottom: 0;
+    background-color: ${theme.colors.composition.background};
 `;
 
 export const SmallTextField = styled(TextField)`
     width: 172px;
+`;
+
+export const TableContainer = styled.div`
+    width: 100%;
+    padding: 32px 100px 128px 100px;
 `;

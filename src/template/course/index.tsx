@@ -8,6 +8,7 @@ import {
     Select,
     TextField
 } from '@mui/material';
+import BasicTable from 'components/ProaTable';
 import * as S from './styles';
 
 const CourseTemplate = () => {
@@ -27,7 +28,6 @@ const CourseTemplate = () => {
 
     const [startDate, setStartDate] = useState(course.start_date);
     const [finishDate, setFinishDate] = useState(course.finish_date);
-    const [students, setStudents] = useState(course.students);
     const [teachers, setTeachers] = useState(course.teachers);
     const [editMode, setEditMode] = useState(false);
 
@@ -85,13 +85,16 @@ const CourseTemplate = () => {
                 />
                 <S.Label>Inscritos:</S.Label>
                 <S.SmallTextField
-                    value={students}
-                    disabled={!editMode}
+                    value={course.students}
+                    disabled
                     type="number"
                     style={{ width: 120 }}
-                    onChange={(e) => setStudents(parseInt(e.target.value, 10))}
                 />
             </S.LowerData>
+            <S.TableContainer>
+                <BasicTable />
+            </S.TableContainer>
+
             <S.Footer>
                 <S.CourseData>
                     ID do curso: {course.id} - Última atualização em{' '}
