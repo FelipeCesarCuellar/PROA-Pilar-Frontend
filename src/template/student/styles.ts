@@ -32,7 +32,6 @@ export const FormWrapper = styled.div`
 
 export const StudentData = styled.p`
     position: absolute;
-    left: 100px;
     font-family: PoppinsLight;
     font-size: 16px;
     line-height: 24px;

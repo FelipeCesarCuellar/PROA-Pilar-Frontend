@@ -62,10 +62,13 @@ const StudentTemplate = () => {
                 </FormControl>
             </S.FormWrapper>
             <S.Footer>
-                <S.StudentData>
-                    ID do aluno: 5428 - Última atualização em 21/10/2023 - 15:37
+                <S.StudentData style={{ left: 100 }}>
+                    ID do aluno: 5428
                 </S.StudentData>
                 <Button variant="contained">Salvar alterações</Button>
+                <S.StudentData style={{ right: 100 }}>
+                    Atualizado em 21/10/2023 - 15:37
+                </S.StudentData>
             </S.Footer>
         </S.Container>
     );
