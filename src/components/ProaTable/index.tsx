@@ -71,16 +71,16 @@ export default function BasicTable() {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow
-                        style={{
+                        sx={{
                             backgroundColor: theme.colors.institucional.blue
                         }}
                     >
-                        <S.TableCellHead>Nome</S.TableCellHead>
-                        <S.TableCellHead align="left">Email</S.TableCellHead>
-                        <S.TableCellHead align="left">Cursos</S.TableCellHead>
-                        <S.TableCellHead align="left">Situação</S.TableCellHead>
-                        <S.TableCellHead align="left">Estado</S.TableCellHead>
-                        <S.TableCellHead align="left">ID único</S.TableCellHead>
+                        <S.TableCellHead sx={{ color: '#FFF' }}>Nome</S.TableCellHead>
+                        <S.TableCellHead sx={{ color: '#FFF' }} align="left">Email</S.TableCellHead>
+                        <S.TableCellHead sx={{ color: '#FFF' }} align="left">Cursos</S.TableCellHead>
+                        <S.TableCellHead sx={{ color: '#FFF' }} align="left">Situação</S.TableCellHead>
+                        <S.TableCellHead sx={{ color: '#FFF' }} align="left">Estado</S.TableCellHead>
+                        <S.TableCellHead sx={{ color: '#FFF' }} align="left">ID único</S.TableCellHead>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -103,7 +103,9 @@ export default function BasicTable() {
                             <TableCell align="left">
                                 <SituationIndicator situation={row.situation} />
                             </TableCell>
-                            <TableCell align="left">{row.state}</TableCell>
+                            <TableCell align="left">
+                                {row.state}
+                            </TableCell>
                             <TableCell align="left">{row.id}</TableCell>
                         </TableRow>
                     ))}
