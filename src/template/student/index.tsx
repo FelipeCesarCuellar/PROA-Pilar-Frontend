@@ -9,12 +9,14 @@ import {
     TextField
 } from '@mui/material';
 import SituationIndicator from 'components/SituationIndicator';
+import sampleStudents from 'template/listStudents/sample';
 import * as S from './styles';
 
 const StudentTemplate = () => {
     const user = {
         username: 'Felipe Silva'
     };
+    const student = sampleStudents[3];
 
     // Os valores em sx (exemplo: sx={{ m: 1 }}) estão em rem, ou seja, pra font-size: 100%, 1 rem === 16px;
 
@@ -22,19 +24,40 @@ const StudentTemplate = () => {
         <S.Container>
             <ProaHeader username={user.username} />
             <S.ScreenTitle>Dados do estudante</S.ScreenTitle>
-            <S.ProfilePicture src="/assets/images/temp_profile.png" alt="" />
+            <S.ProfilePicture src="/assets/images/temp_student.png" alt="" />
 
             <S.FormWrapper>
-                <TextField sx={{ mb: 1.5 }} fullWidth label="Nome Completo" />
-                <TextField sx={{ mb: 1.5 }} fullWidth label="Email" />
-                <TextField sx={{ mb: 1.5 }} fullWidth label="Telefone" />
-                <TextField sx={{ mb: 1.5 }} fullWidth label="Cursos" />
+                <TextField
+                    sx={{ mb: 1.5 }}
+                    fullWidth
+                    label="Nome Completo"
+                    value={student.name}
+                />
+                <TextField
+                    sx={{ mb: 1.5 }}
+                    fullWidth
+                    label="Email"
+                    value={student.email}
+                />
+                <TextField
+                    sx={{ mb: 1.5 }}
+                    fullWidth
+                    label="Telefone"
+                    value={student.phone}
+                />
+                <TextField
+                    sx={{ mb: 1.5 }}
+                    fullWidth
+                    label="Cursos"
+                    value={student.courses}
+                />
                 <FormControl sx={{ mb: 1.5 }}>
                     <InputLabel id="region-label">Região</InputLabel>
                     <Select
                         labelId="region-label"
                         id="region-select"
                         label="Região"
+                        value={student.state}
                     >
                         <MenuItem value="Brasil">Brasil</MenuItem>
                         <MenuItem value="SP">SP</MenuItem>
@@ -48,14 +71,15 @@ const StudentTemplate = () => {
                         labelId="situation-label"
                         id="situation-select"
                         label="Situação"
+                        value={student.situation}
                     >
-                        <MenuItem value="Brasil">
+                        <MenuItem value="Normal">
                             <SituationIndicator situation="Normal" />
                         </MenuItem>
-                        <MenuItem value="SP">
+                        <MenuItem value="Atenção">
                             <SituationIndicator situation="Atenção" />
                         </MenuItem>
-                        <MenuItem value="RJ">
+                        <MenuItem value="Desistente">
                             <SituationIndicator situation="Desistente" />
                         </MenuItem>
                     </Select>

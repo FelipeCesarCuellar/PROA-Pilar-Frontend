@@ -19,9 +19,13 @@ const ProaHeader: React.FC<ProaHeaderProps> = ({ username }) => {
             </S.LeftSection>
             <S.Right>
                 <S.Menu>
-                    <S.Option>Alunos</S.Option>
+                    <S.Option onClick={() => router.push('/students')}>
+                        Alunos
+                    </S.Option>
                     <S.BlueDivider />
-                    <S.Option>Cursos</S.Option>
+                    <S.Option onClick={() => router.push('/course')}>
+                        Cursos
+                    </S.Option>
                 </S.Menu>
                 <S.UserProfile onClick={() => router.push('/profile')}>
                     <S.ProfilePicture

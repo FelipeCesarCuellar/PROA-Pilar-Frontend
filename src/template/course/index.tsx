@@ -8,7 +8,8 @@ import {
     Select,
     TextField
 } from '@mui/material';
-import BasicTable from 'components/ProaTable';
+import StudentTable from 'components/StudentTable';
+import sampleStudents from 'template/listStudents/sample';
 import * as S from './styles';
 
 const CourseTemplate = () => {
@@ -92,7 +93,7 @@ const CourseTemplate = () => {
                 />
             </S.LowerData>
             <S.TableContainer>
-                <BasicTable />
+                <StudentTable students={sampleStudents} />
             </S.TableContainer>
 
             <S.Footer>

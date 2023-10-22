@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
 import ListStudentsTemplate from 'template/listStudents';
 
-const Home: NextPage = () => {
+const Students: NextPage = () => {
     return <ListStudentsTemplate />;
 };
 
-export default Home;
+export default Students;
