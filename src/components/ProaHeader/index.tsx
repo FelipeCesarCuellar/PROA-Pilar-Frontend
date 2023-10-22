@@ -23,7 +23,7 @@ const ProaHeader: React.FC<ProaHeaderProps> = ({ username }) => {
                         Alunos
                     </S.Option>
                     <S.BlueDivider />
-                    <S.Option onClick={() => router.push('/course')}>
+                    <S.Option onClick={() => router.push('/courses')}>
                         Cursos
                     </S.Option>
                 </S.Menu>
