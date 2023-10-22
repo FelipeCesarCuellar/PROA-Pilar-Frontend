@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
-import ListStudentsTemplate from 'template/listStudents';
+import LoginTemplate from 'template/authenticate';
 
 const Home: NextPage = () => {
-    return <ListStudentsTemplate />;
+    return <LoginTemplate />;
 };
 
 export default Home;
